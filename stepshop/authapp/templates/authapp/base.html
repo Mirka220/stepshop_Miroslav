@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {{ title|title }}
+        {% endblock %}
+    </title>
+
+    <link href="{% static 'stepshop/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'stepshop/assets/css/fontawesome.css' %}">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+
+<div class="container">
+    <div class="login">
+        Вход в систему
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'stepshop/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'stepshop/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+{% block js %}
+{% endblock %}
+
+</body>
+</html>

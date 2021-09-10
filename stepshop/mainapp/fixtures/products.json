@@ -1,0 +1,77 @@
+[
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Бобёр классический",
+      "image": "product_images/product-03.jpg",
+      "short_desc": "Обычный бобёр",
+      "description": "Строит плотины, приятный собеседник",
+      "price": "500.00",
+      "quantity": 6,
+      "created_at": "2021-09-10T09:30:41.820",
+      "updated_at": "2021-09-10T09:30:41.820"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "category": 2,
+      "name": "Кеды",
+      "image": "product_images/product-04.jpg",
+      "short_desc": "Кеды и кеды",
+      "description": "Продаются поштучно",
+      "price": "621.03",
+      "quantity": 9,
+      "created_at": "2021-09-10T09:30:41.916",
+      "updated_at": "2021-09-10T09:30:41.916"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "category": 3,
+      "name": "Синие джинсы",
+      "image": "product_images/product-02.jpg",
+      "short_desc": "Очень синие",
+      "description": "Сносу им нет, можно рельсы ложить в них",
+      "price": "500.00",
+      "quantity": 3,
+      "created_at": "2021-09-10T09:30:41.995",
+      "updated_at": "2021-09-10T09:30:41.995"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Моднявые кеды",
+      "image": "product_images/product-04.jpg",
+      "short_desc": "Очень красные",
+      "description": "Красота, ноги в них пахнут розочками",
+      "price": "250.00",
+      "quantity": 21,
+      "created_at": "2021-09-10T09:30:42.158",
+      "updated_at": "2021-09-10T09:30:42.158"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 5,
+    "fields": {
+      "category": 4,
+      "name": "XiaoMi MiMax 3",
+      "image": "",
+      "short_desc": "Лучший в своём классе",
+      "description": "",
+      "price": "253.00",
+      "quantity": 7,
+      "created_at": "2021-09-10T09:30:42.251",
+      "updated_at": "2021-09-10T09:30:42.251"
+    }
+  }
+]
