@@ -39,7 +39,7 @@ https://www.tooplate.com/view/2114-pixie
 
             {% if user.is_authenticated %}
             <span>
-              <a href="{#% url 'auth:edit' %#}" style="color:white;">
+              <a href="{% url 'auth:edit' %}" style="color:white;">
                 {{ user.first_name|default:user.username }}
               </a>
             </span>

@@ -3,7 +3,7 @@
     "model": "mainapp.productcategory",
     "pk": 1,
     "fields": {
-      "name": "Бобры",
+      "name": "Автомобили",
       "description": "Трудяги ещё те"
     }
   },
