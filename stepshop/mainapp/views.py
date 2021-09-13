@@ -21,4 +21,10 @@ def products(request):
 
 
 def product(request):
-    return render(request, 'mainapp/product.html')
+    title = 'продукт'
+
+    context = {
+        'title': title,
+    }
+
+    return render(request, 'mainapp/product.html', context)
