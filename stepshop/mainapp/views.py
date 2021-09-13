@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from mainapp.models import Product
+
 
 def products(request):
     title = 'продукты | каталог'
@@ -12,9 +14,12 @@ def products(request):
         {'href': 'products_parts', 'name': 'автозапчасти'},
     ]
 
+    products_all = Product.objects.all()
+
     context = {
         'title': title,
         'links_menu': links_menu,
+        'products': products_all,
     }
 
     return render(request, 'mainapp/products.html', context)
