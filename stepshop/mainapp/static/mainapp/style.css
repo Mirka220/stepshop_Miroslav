@@ -1,3 +1,13 @@
-h1 {
-    color: red;
+#filters a {
+    color: #1e1e1e;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#filters a:hover {
+    color: #3a8bcd;
+}
+
+#filters .active a {
+    color: #3a8bcd;
 }

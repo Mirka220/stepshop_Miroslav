@@ -41,7 +41,7 @@ a {
 	opacity: 0.7;
 }
 .section-heading {
-	margin-top: 80px;
+	/*margin-top: 0px;*/
 	margin-bottom: 40px;
 }
 .section-heading .line-dec {
@@ -162,6 +162,7 @@ a {
 
 /* Featured Style */
 .featured-items {
+    margin-top: 50px
 	margin-bottom: 70px;
 }
 .featured-item {
@@ -346,7 +347,7 @@ a {
 
 /* Featured Page Style */
 .featured-page {
-	margin-top: 130px;
+	margin-top: 50px;
 	margin-bottom: 40px;
 }
 .featured-page .section-heading {
