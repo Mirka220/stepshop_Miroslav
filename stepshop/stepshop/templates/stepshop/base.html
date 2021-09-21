@@ -39,6 +39,12 @@ https://www.tooplate.com/view/2114-pixie
         <div class="row">
           <div class="col-md-12">
 
+            {% if user.is_staff %}
+            <a href="{% url 'admin_staff:users' %}">
+                <span>Админка</span>
+            </a>
+            {% endif %}
+
             {% if user.is_authenticated %}
               <a href="{% url 'auth:edit' %}">
                 <span>{{ user.first_name|default:user.username }}</span>

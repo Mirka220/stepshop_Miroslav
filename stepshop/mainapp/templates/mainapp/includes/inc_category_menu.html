@@ -14,9 +14,11 @@
                         <a href="{% url 'products:index' %}">Все</a>
                     </button>
                     {% for link in links_menu %}
+                    {% if link.is_active %}
                     <button class="btn btn-primary {% if pk == link.pk %}active{% endif %}">
                         <a href="{% url 'products:category' link.pk %}">{{ link.name }}</a>
                     </button>
+                    {% endif %}
                     {% endfor %}
 
                 </div>
