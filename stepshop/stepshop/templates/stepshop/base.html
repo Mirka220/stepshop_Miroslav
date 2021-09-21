@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{% static 'stepshop/assets/css/tooplate-main.css' %}">
     <link rel="stylesheet" href="{% static 'stepshop/assets/css/owl.css' %}">
 
+    <link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
+
     {% block css %}
     {% endblock %}
 <!--
@@ -30,7 +32,7 @@ https://www.tooplate.com/view/2114-pixie
   </head>
 
   <body>
-
+    
     <!-- Pre Header -->
     <div id="pre-header">
       <div class="container">
@@ -38,19 +40,27 @@ https://www.tooplate.com/view/2114-pixie
           <div class="col-md-12">
 
             {% if user.is_authenticated %}
-            <span>
-              <a href="{% url 'auth:edit' %}" style="color:white;">
-                {{ user.first_name|default:user.username }}
+              <a href="{% url 'auth:edit' %}">
+                <span>{{ user.first_name|default:user.username }}</span>
               </a>
-            </span>
-            <span>
-                  <a href="{% url 'auth:logout' %}" style="color:white;">Выйти</a>
-            </span>
+
+              <a href="{% url 'auth:logout' %}">
+                <span>Выйти</span>
+              </a>
+
             {% else %}
-              <span>
-                  <a href="{% url 'auth:login' %}" style="color:white;">Войти</a>
-            </span>
+              <a href="{% url 'auth:login' %}">
+                <span>Войти</span>
+              </a>
             {% endif %}
+
+            <a href="{% url 'basket:view' %}" class="basket">
+              {% if basket %}
+                <span>{{ basket.0.total_quantity }}</span>
+              {% endif %}
+            </a>
+
+            <span class="price">${{ basket.0.total_cost|floatformat:0 }}</span>
 
           </div>
         </div>
@@ -88,13 +98,13 @@ https://www.tooplate.com/view/2114-pixie
 
     <!-- Additional Scripts -->
     <script src="{% static 'stepshop/assets/js/custom.js' %}"></script>
-    <script src="{% static '/stepshop/assets/js/owl.js' %}"></script>
+    <script src="{% static 'stepshop/assets/js/owl.js' %}"></script>
 
     {% block js %}
     {% endblock %}
 
 
-    <script language = "text/Javascript">
+    <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
       function clearField(t){                   //declaring the array outside of the
       if(! cleared[t.id]){                      // function makes it static and global

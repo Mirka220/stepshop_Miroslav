@@ -41,7 +41,7 @@ a {
 	opacity: 0.7;
 }
 .section-heading {
-	/*margin-top: 0px;*/
+	/*margin-top: 80px;*/
 	margin-bottom: 40px;
 }
 .section-heading .line-dec {
@@ -118,7 +118,7 @@ a {
 }
 .navbar-dark .navbar-toggler {
 	border-color: #3a8bcd;
-	background-color: #3a8bcd;
+	background-color: #3a8bcd;	
 	height: 50px;
 	outline: none;
 }
@@ -162,7 +162,7 @@ a {
 
 /* Featured Style */
 .featured-items {
-    margin-top: 50px
+    margin-top: 50px;
 	margin-bottom: 70px;
 }
 .featured-item {

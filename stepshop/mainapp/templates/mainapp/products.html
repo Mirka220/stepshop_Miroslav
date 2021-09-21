@@ -1,21 +1,10 @@
 {% extends 'stepshop/base.html' %}
 {% load static %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'mainapp/style.css' %}">
-{% endblock %}
-
-
 {% block content %}
 <!-- Page Content -->
 <!-- Items Starts Here -->
-<div class="featured-page">
-    <div class="container">
-        <div class="row">
-            {% include 'mainapp/includes/inc_category_menu.html' %}
-        </div>
-    </div>
-</div>
+{% include 'mainapp/includes/inc_category_menu.html' %}
 
 <div class="featured container no-gutter">
 
@@ -24,10 +13,10 @@
         {% for product in products %}
 
         <div id="{{ product.id }}" class="item new col-md-4">
-            <a href="#">
+            <a href="{% url 'products:product' product.pk %}">
                 <div class="featured-item">
                     <img src="{% if product.image %}
-                              {{ product.image.url }}
+                                {{ product.image.url }}
                             {% endif %}"
                          alt="{{ product.name }}">
                     <h4>{{ product.name }}</h4>
@@ -57,8 +46,4 @@
     </div>
 </div>
 <!-- Featred Page Ends Here -->
-{% endblock %}
-
-{% block js %}
-<script src="{% static 'stepshop/assets/js/isotope.js' %}"></script>
 {% endblock %}

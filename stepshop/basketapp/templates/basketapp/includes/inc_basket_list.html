@@ -1,0 +1,42 @@
+<div class="col-md-4 col-sm-12">
+    <div class="section-heading">
+        <div class="line-dec"></div>
+        <h1>Корзина &mdash; {{ basket.0.user }}</h1>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Продукт</th>
+        <th scope="col">Стоимость</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Цена</th>
+        <th scope="col">Удалить</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in basket %}
+    <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ item.product }}</td>
+        <td>${{ item.product.price }}</td>
+        <td>
+            <input type="number"
+                   name="{{ item.pk }}"
+                   min="0"
+                   value="{{ item.quantity }}">
+        </td>
+        <td>${{ item.product_total_price }}</td>
+        <td>
+            <a href="{% url 'basket:remove' item.pk %}">
+                <i class="fa fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% include 'basketapp/includes/inc_basket_summary.html' %}

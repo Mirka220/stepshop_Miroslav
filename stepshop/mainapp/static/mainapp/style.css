@@ -1,3 +1,52 @@
+#pre-header .col-md-12 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#pre-header a {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+#pre-header span {
+    padding: 0;
+}
+
+#pre-header .basket span {
+    width: 16px;
+    height: 16px;
+    font-size: 13px;
+    padding: 0;
+    text-align: center;
+    color: white;
+    background-color: #3a8bcd;
+    border-radius: 50%;
+}
+
+#pre-header .basket {
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 28px;
+    height: 26px;
+    background: url(../images/basket.png) no-repeat;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#pre-header .price {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+
+.basket_list {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
 #filters a {
     color: #1e1e1e;
     font-size: 15px;
@@ -10,4 +59,9 @@
 
 #filters .active a {
     color: #3a8bcd;
+}
+
+
+.single-product {
+    margin-top: 50px;
 }

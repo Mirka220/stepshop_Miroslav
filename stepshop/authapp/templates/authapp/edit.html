@@ -9,13 +9,14 @@
         </div>
     </div>
     <div class="row">
-        <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post"
+                                                                     enctype="multipart/form-data">
             {% csrf_token %}
             {{ edit_form.as_p }}
             <button type="submit" class="btn btn-primary form-control">Сохранить</button>
         </form>
         <button class="btn btn-round form-control last">
-            <a href="{% url 'index' %}">На главную</a>
+            <a href="{% url 'index' %}">на главную</a>
         </button>
     </div>
 </div>

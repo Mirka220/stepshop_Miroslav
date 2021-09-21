@@ -1,0 +1,18 @@
+{% extends 'stepshop/base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container">
+            <div class="row basket_list">
+
+                {% include 'basketapp/includes/inc_basket_list.html' %}
+
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'basketapp/js/script.js' %}"></script>
+{% endblock %}
