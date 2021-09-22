@@ -1,5 +1,6 @@
 {% extends 'stepshop/base.html' %}
 {% load static %}
+{% load default_image_tags %}
 
 {% block content %}
     <!-- Page Content -->
@@ -26,9 +27,7 @@
               {% for product in products %}
               <a href="{% url 'products:product' product.pk %}">
                 <div class="featured-item">
-                  <img src="{% if product.image %}
-                              {{ product.image.url }}
-                            {% endif %}"
+                  <img src="{{ product.image|default_product_image }}"
                        alt="{{ product.name }}">
                   <h4>{{ product.name }}</h4>
                   <h6>${{ product.price }}</h6>
