@@ -1,6 +1,9 @@
 from django.contrib.auth.decorators import user_passes_test
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 
+from authapp.forms import ShopUserRegisterForm, ShopUserEditForm
 from authapp.models import ShopUser
 from mainapp.models import ProductCategory, Product
 
@@ -20,15 +23,66 @@ def users(request):
 
 
 def user_create(request):
-    pass
+    title = 'админка | создать пользователя'
+
+    if request.method == 'POST':
+        user_form = ShopUserRegisterForm(request.POST, request.FILES)
+
+        if user_form.is_valid():
+            user_form.save()
+            return HttpResponseRedirect(reverse('admin_staff:user'))
+
+    else:
+        user_form = ShopUserRegisterForm()
+
+    context = {
+        'title': title,
+        'user_form': user_form,
+    }
+
+    return render(request, 'adminapp/users/user_create.html', context)
 
 
-def user_update(request):
-    pass
+def user_update(request, pk):
+    title = 'админка | редактировать пользователя'
+
+    edit_user = get_object_or_404(ShopUser, id=pk)
+
+    if request.method == 'POST':
+        edit_form = ShopUserEditForm(request.POST, request.FILES, instance=edit_user)
+
+        if edit_form.is_valid():
+            edit_form.save()
+            return HttpResponseRedirect(reverse('admin_staff:user'))
+
+    else:
+        edit_form = ShopUserEditForm(instance=edit_user)
+
+    context = {
+        'title': title,
+        'edit_form': edit_form,
+        'edit_user': edit_user,
+    }
+
+    return render(request, 'adminapp/users/user_update.html', context)
 
 
-def user_delete(request):
-    pass
+def user_delete(request, pk):
+    title = 'админка | удаление пользователя'
+
+    user = get_object_or_404(ShopUser, id=pk)
+
+    if request.method == 'POST':
+        user.is_active = False
+        user.save()
+        return HttpResponseRedirect(reverse('admin_staff:users'))
+
+    context = {
+        'title': title,
+        'user_to_delete': user,
+    }
+
+    return render(request, 'adminapp/users/user_delete.html', context)
 
 
 @user_passes_test(lambda u: u.is_staff)
