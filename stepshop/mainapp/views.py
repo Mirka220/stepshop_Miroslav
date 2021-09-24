@@ -1,4 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 
 from mainapp.models import Product, ProductCategory
 from basketapp.models import Basket
@@ -18,14 +20,16 @@ def get_same_product(current_product):
 def products(request, pk=None):
     title = 'продукты | каталог'
 
-    links_menu = ProductCategory.objects.all()
+    links_menu = ProductCategory.objects.filter(is_active=True)  # all()
 
-    products_all = Product.objects.all()
+    products_all = Product.objects.filter(category__is_active=True)  # all()
     category = {'name': 'продукты'}
 
     if pk is not None:
         products_all = Product.objects.filter(category__id=pk)
         category = get_object_or_404(ProductCategory, id=pk)
+        if not category.is_active:
+            return HttpResponseRedirect(reverse('products:index'))
 
     basket = get_basket(request.user)
 
@@ -46,6 +50,10 @@ def product(request, pk):
 
     links_menu = ProductCategory.objects.all()
     product_item = get_object_or_404(Product, id=pk)
+
+    category = product_item.category
+    if not category.is_active:
+        return HttpResponseRedirect(reverse('products:index'))
 
     basket = get_basket(request.user)
     same_products = get_same_product(product_item)

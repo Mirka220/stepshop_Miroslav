@@ -1,34 +1,57 @@
 [
   {
     "model": "mainapp.productcategory",
+
     "pk": 1,
     "fields": {
-      "name": "Автомобили",
-      "description": "Трудяги ещё те"
+      "name": "Mitsubishi",
+      "description": "",
+      "is_active": true
     }
   },
   {
     "model": "mainapp.productcategory",
     "pk": 2,
     "fields": {
-      "name": "Обувь",
-      "description": ""
+      "name": "Toyota",
+      "description": "",
+      "is_active": true
     }
   },
   {
     "model": "mainapp.productcategory",
     "pk": 3,
     "fields": {
-      "name": "Штаны",
-      "description": ""
+      "name": "BMW",
+      "description": "",
+      "is_active": true
     }
   },
   {
     "model": "mainapp.productcategory",
     "pk": 4,
     "fields": {
-      "name": "Смартфоны",
-      "description": ""
+      "name": "Mersedes",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Lexus",
+      "description": "",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 6,
+    "fields": {
+      "name": "Nissan",
+      "description": "",
+      "is_active": true
     }
   }
 ]

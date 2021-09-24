@@ -4,14 +4,15 @@
     "pk": 1,
     "fields": {
       "category": 1,
-      "name": "Бобёр классический",
-      "image": "product_images/product-03.jpg",
-      "short_desc": "Обычный бобёр",
-      "description": "Строит плотины, приятный собеседник",
-      "price": "500.00",
-      "quantity": 6,
-      "created_at": "2021-09-10T09:30:41.820",
-      "updated_at": "2021-09-10T09:30:41.820"
+      "name": "Montero Sport",
+      "image": "product_images/item-03_SvhXcA9.jpg",
+      "short_desc": "",
+      "description": "Отличный выбор для бездорожья",
+      "price": "25000.00",
+      "quantity": 3,
+      "is_active": true,
+      "created_at": "2021-09-13T19:32:29.118",
+      "updated_at": "2021-09-24T18:56:49.647"
     }
   },
   {
@@ -19,14 +20,15 @@
     "pk": 2,
     "fields": {
       "category": 2,
-      "name": "Кеды",
+      "name": "Camry 3.5",
       "image": "product_images/product-04.jpg",
-      "short_desc": "Кеды и кеды",
-      "description": "Продаются поштучно",
-      "price": "621.03",
+      "short_desc": "",
+      "description": "",
+      "price": "23500.00",
       "quantity": 9,
-      "created_at": "2021-09-10T09:30:41.916",
-      "updated_at": "2021-09-10T09:30:41.916"
+      "is_active": true,
+      "created_at": "2021-09-13T19:32:29.160",
+      "updated_at": "2021-09-16T18:58:22.384"
     }
   },
   {
@@ -34,14 +36,15 @@
     "pk": 3,
     "fields": {
       "category": 3,
-      "name": "Синие джинсы",
+      "name": "M5",
       "image": "product_images/product-02.jpg",
-      "short_desc": "Очень синие",
-      "description": "Сносу им нет, можно рельсы ложить в них",
-      "price": "500.00",
+      "short_desc": "",
+      "description": "",
+      "price": "39000.00",
       "quantity": 3,
-      "created_at": "2021-09-10T09:30:41.995",
-      "updated_at": "2021-09-10T09:30:41.995"
+      "is_active": true,
+      "created_at": "2021-09-13T19:32:29.205",
+      "updated_at": "2021-09-16T18:58:54.004"
     }
   },
   {
@@ -49,14 +52,15 @@
     "pk": 4,
     "fields": {
       "category": 2,
-      "name": "Моднявые кеды",
-      "image": "product_images/product-04.jpg",
-      "short_desc": "Очень красные",
-      "description": "Красота, ноги в них пахнут розочками",
-      "price": "250.00",
+      "name": "Land Cruser 300",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "35550.00",
       "quantity": 21,
-      "created_at": "2021-09-10T09:30:42.158",
-      "updated_at": "2021-09-10T09:30:42.158"
+      "is_active": true,
+      "created_at": "2021-09-13T19:32:29.248",
+      "updated_at": "2021-09-24T14:08:24.696"
     }
   },
   {
@@ -64,14 +68,399 @@
     "pk": 5,
     "fields": {
       "category": 4,
-      "name": "XiaoMi MiMax 3",
+      "name": "GT 63 S",
       "image": "",
       "short_desc": "Лучший в своём классе",
       "description": "",
       "price": "253.00",
       "quantity": 7,
-      "created_at": "2021-09-10T09:30:42.251",
-      "updated_at": "2021-09-10T09:30:42.251"
+      "is_active": true,
+      "created_at": "2021-09-13T19:32:29.284",
+      "updated_at": "2021-09-16T19:00:11.685"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "name": "Lancer",
+      "image": "",
+      "short_desc": "Машина",
+      "description": "",
+      "price": "25000.00",
+      "quantity": 7,
+      "is_active": true,
+      "created_at": "2021-09-24T13:53:30.853",
+      "updated_at": "2021-09-24T14:17:17.789"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 7,
+    "fields": {
+      "category": 1,
+      "name": "Pajero",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "20000.00",
+      "quantity": 6,
+      "is_active": true,
+      "created_at": "2021-09-24T14:05:32.524",
+      "updated_at": "2021-09-24T14:17:31.706"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 8,
+    "fields": {
+      "category": 1,
+      "name": "Eclipse",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "23500.00",
+      "quantity": 7,
+      "is_active": true,
+      "created_at": "2021-09-24T14:06:08.026",
+      "updated_at": "2021-09-24T14:17:48.397"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 9,
+    "fields": {
+      "category": 1,
+      "name": "Delica",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "19000.00",
+      "quantity": 2,
+      "is_active": true,
+      "created_at": "2021-09-24T14:06:35.894",
+      "updated_at": "2021-09-24T14:18:02.455"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 10,
+    "fields": {
+      "category": 2,
+      "name": "Tundra",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "40000.00",
+      "quantity": 4,
+      "is_active": true,
+      "created_at": "2021-09-24T14:07:17.771",
+      "updated_at": "2021-09-24T14:18:13.864"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 11,
+    "fields": {
+      "category": 2,
+      "name": "Supra",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "21000.00",
+      "quantity": 1,
+      "is_active": true,
+      "created_at": "2021-09-24T14:07:42.459",
+      "updated_at": "2021-09-24T14:18:32.899"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 12,
+    "fields": {
+      "category": 2,
+      "name": "Corolla",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "27000.00",
+      "quantity": 18,
+      "is_active": true,
+      "created_at": "2021-09-24T14:08:12.675",
+      "updated_at": "2021-09-24T14:18:55.335"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 13,
+    "fields": {
+      "category": 3,
+      "name": "I8",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "50000.00",
+      "quantity": 1,
+      "is_active": true,
+      "created_at": "2021-09-24T14:08:45.277",
+      "updated_at": "2021-09-24T14:19:06.546"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 14,
+    "fields": {
+      "category": 3,
+      "name": "X5",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "30000.00",
+      "quantity": 5,
+      "is_active": true,
+      "created_at": "2021-09-24T14:08:54.655",
+      "updated_at": "2021-09-24T14:19:19.750"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 15,
+    "fields": {
+      "category": 3,
+      "name": "M8",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "33000.00",
+      "quantity": 8,
+      "is_active": true,
+      "created_at": "2021-09-24T14:09:10.852",
+      "updated_at": "2021-09-24T14:19:37.676"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 16,
+    "fields": {
+      "category": 3,
+      "name": "E34",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "18000.00",
+      "quantity": 3,
+      "is_active": true,
+      "created_at": "2021-09-24T14:09:34.326",
+      "updated_at": "2021-09-24T14:19:57.309"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 17,
+    "fields": {
+      "category": 4,
+      "name": "E Class",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "41000.00",
+      "quantity": 2,
+      "is_active": true,
+      "created_at": "2021-09-24T14:10:21.086",
+      "updated_at": "2021-09-24T14:20:13.429"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 18,
+    "fields": {
+      "category": 4,
+      "name": "S Class",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "45000.00",
+      "quantity": 1,
+      "is_active": true,
+      "created_at": "2021-09-24T14:10:30.501",
+      "updated_at": "2021-09-24T14:20:26.258"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 19,
+    "fields": {
+      "category": 4,
+      "name": "Maybach",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "60000.00",
+      "quantity": 6,
+      "is_active": true,
+      "created_at": "2021-09-24T14:10:47.579",
+      "updated_at": "2021-09-24T14:20:40.914"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 20,
+    "fields": {
+      "category": 4,
+      "name": "C Class",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "25000.00",
+      "quantity": 3,
+      "is_active": true,
+      "created_at": "2021-09-24T14:11:16.474",
+      "updated_at": "2021-09-24T14:21:00.723"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 21,
+    "fields": {
+      "category": 5,
+      "name": "LX 570",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "34000.00",
+      "quantity": 0,
+      "is_active": true,
+      "created_at": "2021-09-24T14:11:39.296",
+      "updated_at": "2021-09-24T14:21:23.975"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 22,
+    "fields": {
+      "category": 5,
+      "name": "GS 300",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "37000.00",
+      "quantity": 5,
+      "is_active": true,
+      "created_at": "2021-09-24T14:12:02.892",
+      "updated_at": "2021-09-24T14:22:31.622"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 23,
+    "fields": {
+      "category": 5,
+      "name": "RX 300",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "32000.00",
+      "quantity": 3,
+      "is_active": true,
+      "created_at": "2021-09-24T14:12:22.006",
+      "updated_at": "2021-09-24T14:22:48.284"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 24,
+    "fields": {
+      "category": 5,
+      "name": "ES 250",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "28000.00",
+      "quantity": 4,
+      "is_active": true,
+      "created_at": "2021-09-24T14:12:36.824",
+      "updated_at": "2021-09-24T14:23:09.103"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 25,
+    "fields": {
+      "category": 6,
+      "name": "Skyline R 34",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "17000.00",
+      "quantity": 4,
+      "is_active": true,
+      "created_at": "2021-09-24T14:13:42.557",
+      "updated_at": "2021-09-24T14:23:30.285"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 26,
+    "fields": {
+      "category": 6,
+      "name": "GTR",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "50000.00",
+      "quantity": 5,
+      "is_active": true,
+      "created_at": "2021-09-24T14:13:57.427",
+      "updated_at": "2021-09-24T14:23:40.827"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 27,
+    "fields": {
+      "category": 6,
+      "name": "Qashqai",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "30000.00",
+      "quantity": 5,
+      "is_active": true,
+      "created_at": "2021-09-24T14:14:24.704",
+      "updated_at": "2021-09-24T14:23:50.445"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 28,
+    "fields": {
+      "category": 6,
+      "name": "Terrano",
+      "image": "",
+      "short_desc": "",
+      "description": "",
+      "price": "33000.00",
+      "quantity": 2,
+      "is_active": true,
+      "created_at": "2021-09-24T14:15:46.864",
+      "updated_at": "2021-09-24T14:24:12.056"
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 29,
+    "fields": {
+      "category": 6,
+      "name": "Murano",
+      "image": "product_images/item-06_y4zWpul.jpg",
+      "short_desc": "",
+      "description": "",
+      "price": "35000.00",
+      "quantity": 4,
+      "is_active": true,
+      "created_at": "2021-09-24T14:16:12.493",
+      "updated_at": "2021-09-24T18:55:39.128"
     }
   }
 ]

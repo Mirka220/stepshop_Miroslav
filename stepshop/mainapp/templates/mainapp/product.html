@@ -77,7 +77,7 @@
               {% for product in same_products %}
               <a href="{% url 'products:product' product.pk %}">
                 <div class="featured-item">
-                  <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                  <img src="{{ product.image }}" alt="{{ product.name }}">
                   <h4>{{ product.name }}</h4>
                   <h6>${{ product.price }}</h6>
                 </div>

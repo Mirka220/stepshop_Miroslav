@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
+from adminapp.forms import ProductCategoryCreateForm, ProductCategoryEditForm
 from authapp.forms import ShopUserRegisterForm, ShopUserEditForm
 from authapp.models import ShopUser
 from mainapp.models import ProductCategory, Product
@@ -100,15 +101,66 @@ def categories(request):
 
 
 def category_create(request):
-    pass
+    title = 'админка | создать категорию'
+
+    if request.method == 'POST':
+        category_form = ProductCategoryCreateForm(request.POST, request.FILES)
+
+        if category_form.is_valid():
+            category_form.save()
+            return HttpResponseRedirect(reverse('admin_staff:categories'))
+
+    else:
+        user_form = ProductCategoryCreateForm()
+
+    context = {
+        'title': title,
+        'category_form': category_form,
+    }
+
+    return render(request, 'adminapp/categories/category_create.html', context)
 
 
-def category_update(request):
-    pass
+def category_update(request, pk):
+    title = 'админка | редактировать категорию'
+
+    edit_category = get_object_or_404(ProductCategory, id=pk)
+
+    if request.method == 'POST':
+        edit_form = ProductCategoryEditForm(request.POST, request.FILES, instance=edit_category)
+
+        if edit_form.is_valid():
+            edit_form.save()
+            return HttpResponseRedirect(reverse('admin_staff:categories'))
+
+    else:
+        edit_form = ProductCategoryEditForm(instance=edit_category)
+
+    context = {
+        'title': title,
+        'edit_form': edit_form,
+        'edit_category': edit_category,
+    }
+
+    return render(request, 'adminapp/categories/category_update.html', context)
 
 
-def category_delete(request):
-    pass
+def category_delete(request, pk):
+    title = 'админка | удаление категории'
+
+    category = get_object_or_404(ProductCategory, id=pk)
+
+    if request.method == 'POST':
+        category.is_active = False
+        category.save()
+        return HttpResponseRedirect(reverse('admin_staff:categories'))
+
+    context = {
+        'title': title,
+        'category_to_delete': category,
+    }
+
+    return render(request, 'adminapp/users/user_delete.html', context)
 
 
 @user_passes_test(lambda u: u.is_superuser)
