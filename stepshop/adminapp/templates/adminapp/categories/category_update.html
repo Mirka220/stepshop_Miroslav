@@ -4,20 +4,22 @@
 
 {% block content %}
     <div class="mx-auto col-3">
-<!--        <div class="user_avatar">-->
-<!--            <img src="{#{ edit_user.avatar|default_avatar_image }#}" alt="{#{ edit_user.username }#}" -->
-<!--                 class="rounded-circle">-->
+<!--        <div class="row">-->
+<!--            <div class="user_avatar">-->
+<!--                <img src="{#{ edit_user.avatar|default_avatar_image }#}" alt="{#{ edit_user.username }#}" class="rounded-circle">-->
+<!--            </div>-->
 <!--        </div>-->
-        <form class="form-horizontal" method="post"
+        <form class="form-horizontal"
+              method="post"
               enctype="multipart/form-data">
             {% csrf_token %}
-            {{ edit_form.as_p }}
+            {{ form.as_p }}
 
             <input class="form-control" type="submit" value="Сохранить">
         </form>
         <button class="btn btn-round form-control last">
             <a href="{% url 'admin_staff:categories' %}">
-                К списку категорий
+                к списку категорий
             </a>
         </button>
     </div>

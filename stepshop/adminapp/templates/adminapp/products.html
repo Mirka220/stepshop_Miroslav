@@ -15,7 +15,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
-                            <th>Названме</th>
+                            <th>Название</th>
                             <th>Описание</th>
                             <th>Количество</th>
                             <th>Стоимость</th>
@@ -25,7 +25,7 @@
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>Названме</th>
+                            <th>Название</th>
                             <th>Описание</th>
                             <th>Количество</th>
                             <th>Стоимость</th>
@@ -36,24 +36,20 @@
                         <tbody>
                         {% for product in objects %}
                             <tr {% if not product.is_active %} style="opacity: 0.5;" {% endif %}>
-                                <td>
-                                  <a href="{#% url 'admin_staff:product_update' product.id %#}"
-                                     style="color: dodgerblue">
-                                    {{ product.name }}
-                                  </a>
-                                </td>
+                                <td><a href="{% url 'admin_staff:product_read' product.id %}"
+                                       style="color: dodgerblue">{{ product.name }}</a></td>
                                 <td>{{ product.short_desc }}</td>
                                 <td>{{ product.quantity }}</td>
                                 <td>{{ product.price }}</td>
-                                <td class="text-center">
-                                    <a href="{#% url 'admin_staff:product_update' pk=productD.id %#}">
-                                      <i class="fa fa-edit"></i>
+                                <td>
+                                    <a href="{% url 'admin_staff:product_update' pk=product.id %}">
+                                        <i class="fa fa-edit"></i>
                                     </a>
                                 </td>
-                                <td class="text-center">
-                                    <a {% if not product.is_active %} class="incisible" {% endif %}
-                                       href="{#% url 'admin_staff:product_delete' pk=category.id %#}">
-                                      <i class="fa fa-times-circle"></i>
+                                <td>
+                                    <a {% if not product.is_active %}class="invisible" {% endif %}
+                                       href="{% url 'admin_staff:product_delete' pk=product.id %}">
+                                        <i class="fa fa-times-circle"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -63,7 +59,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a href="{#% url 'adminapp:product_create' %#}">
+                <a href="{% url 'adminapp:product_create' category.pk %}">
                     <button class="btn btn-success">Создать продукт</button>
                 </a>
             </div>

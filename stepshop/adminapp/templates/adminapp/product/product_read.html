@@ -1,0 +1,18 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+{% load default_image_tags %}
+
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <img src="{{ product.image|default_product_image }}" alt="product.name" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.short_desc }}</p>
+        <p class="card-text">{{ product.description }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Стоимость: ${{ product.price }}</li>
+        <li class="list-group-item">На складе: {{ product.quantity }}&nbsp;шт.</li>
+    </ul>
+</div>
+{% endblock %}

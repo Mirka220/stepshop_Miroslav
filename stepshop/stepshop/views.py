@@ -7,7 +7,7 @@ from mainapp.models import Product
 def index(request):
     title = 'главная'
 
-    products = Product.objects.filter(category__is_active=True)
+    products = Product.objects.filter(category__is_active=True, is_active=True)
 
     basket = []
 

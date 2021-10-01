@@ -29,24 +29,21 @@
                         </tfoot>
                         <tbody>
                         {% for category in objects %}
-                            <tr {% if not user.is_active %} style="opacity: 0.5;" {% endif %}>
+                            <tr {% if not category.is_active %} style="opacity: 0.5;" {% endif %}>
+                                <td><a href="{% url 'admin_staff:products' category.id %}"
+                                       style="color: dodgerblue">{{ category.name }}</a></td>
                                 <td>
-                                  <a href="{% url 'admin_staff:products' category.id %}" style="color: dodgerblue">
-                                    {{ category.name }}
-                                  </a>
-                                </td>
-                                <td class="text-center">
-                                    <a {% if not user.is_active %}
-                                       class="incisible" {% endif %}
+                                    <a {% if not category.is_active %}
+                                       class="invisible" {% endif %}
                                        href="{% url 'admin_staff:category_update' pk=category.id %}">
-                                      <i class="fa fa-edit"></i>
+                                        <i class="fa fa-edit"></i>
                                     </a>
                                 </td>
-                                <td class="text-center">
-                                    <a {% if not user.is_active %}
-                                       class="incisible" {% endif %}
+                                <td>
+                                    <a {% if not category.is_active %}
+                                       class="invisible" {% endif %}
                                        href="{% url 'admin_staff:category_delete' pk=category.id %}">
-                                      <i class="fa fa-times-circle"></i>
+                                        <i class="fa fa-times-circle"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -57,7 +54,7 @@
             </div>
             <div class="card-footer">
                 <a href="{% url 'adminapp:category_create' %}">
-                    <button class="btn btn-success">Создать пользователя</button>
+                    <button class="btn btn-success">Создать категорию</button>
                 </a>
             </div>
         </div>

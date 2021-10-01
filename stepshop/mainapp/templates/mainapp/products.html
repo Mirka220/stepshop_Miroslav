@@ -30,19 +30,65 @@
     </div>
 </div>
 
+
+{% if products.paginator and products.paginator.num_pages > 1 %}
 <div class="page-navigation">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <ul>
-                    <li class="current-page"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                    {% if products.has_previous %}
+                    <li>
+                        <a href="
+                                {% if pk %}
+                                    {% url 'products:category_page' category.pk products.previous_page_number %}
+                                {% else %}
+                                    {% url 'products:page' products.previous_page_number %}
+                                {% endif %}
+                                ">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% for page in products.paginator.page_range %}
+                        <li {% if products.number == page %}class="current-page"{% endif %}>
+                            <a href="
+                                    {% if pk %}
+                                        {% url 'products:category_page' category.pk page %}
+                                    {% else %}
+                                        {% url 'products:page' page %}
+                                    {% endif %}
+                                    ">
+                                {{ page }}
+                            </a>
+                        </li>
+                    {% endfor %}
+
+
+<!--                    <li class="current-page"><a href="#">1</a></li>-->
+<!--                    <li><a href="#">2</a></li>-->
+<!--                    <li><a href="#">3</a></li>-->
+
+
+                    {% if products.has_next %}
+                    <li>
+                        <a href="
+                                {% if pk %}
+                                    {% url 'products:category_page' category.pk products.next_page_number %}
+                                {% else %}
+                                    {% url 'products:page' products.next_page_number %}
+                                {% endif %}
+                                ">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </div>
 </div>
+{% endif %}
 <!-- Featred Page Ends Here -->
 {% endblock %}
