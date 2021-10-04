@@ -1,8 +1,9 @@
 from django.urls import path
 
 import adminapp.views as adminapp
-from adminapp.views import UserListView, UserCreateView, UserUpdateView, UserDeleteView
-from adminapp.views import CategoryListView, CategoryCreateView, CategoryUpdateView, CategoryDeleteView
+from adminapp.views import UserListView, UserCreateView, UserUpdateView, UserDeleteView, \
+                           CategoryListView, CategoryCreateView, CategoryUpdateView, CategoryDeleteView, \
+                           ProductsListView, ProductDetailView, ProductCreateView, ProductUpdateView, ProductDeleteView
 
 
 app_name = 'adminapp'
@@ -18,11 +19,11 @@ urlpatterns = [
     path('categories/update/<int:pk>/', CategoryUpdateView.as_view(), name='category_update'),
     path('categories/delete/<int:pk>/', CategoryDeleteView.as_view(), name='category_delete'),
 
-    path('products/create/category/<int:pk>/', adminapp.product_create, name='product_create'),
-    path('products/read/category/<int:pk>/', adminapp.products, name='products'),
-    path('products/read/<int:pk>/', adminapp.product_read, name='product_read'),
-    path('products/update/<int:pk>/', adminapp.product_update, name='product_update'),
-    path('products/delete/<int:pk>/', adminapp.product_delete, name='product_delete'),
+    path('products/create/category/<int:pk>/', ProductCreateView.as_view(), name='product_create'),
+    path('products/read/category/<int:pk>/', ProductsListView.as_view(), name='products'),
+    path('products/read/<int:pk>/', ProductDetailView.as_view(), name='product_read'),
+    path('products/update/<int:pk>/', ProductUpdateView.as_view(), name='product_update'),
+    path('products/delete/<int:pk>/', ProductDeleteView.as_view(), name='product_delete'),
 ]
 
 

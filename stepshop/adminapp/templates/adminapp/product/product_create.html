@@ -6,7 +6,7 @@
         <form class="form-horizontal" action="{% url 'admin_staff:product_create' category.pk %}"
               method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ create_form.as_p }}
+            {{ form.as_p }}
 
             <input class="form-control" type="submit" value="Создать">
         </form>
