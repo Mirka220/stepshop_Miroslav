@@ -280,7 +280,7 @@ class ProductsListView(ListView):
     model = Product
     template_name = 'adminapp/products.html'
     context_object_name = 'objects'
-    paginate_by = 1
+    paginate_by = 4
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -376,8 +376,11 @@ class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductEditForm
     template_name = 'adminapp/product/product_update.html'
-    success_url = reverse_lazy('admin_staff:categories')
+    # success_url = reverse_lazy('admin_staff:categories')
     context_object_name = 'product'
+
+    def get_success_url(self):
+        return reverse('admin_staff:products', args=[self.get_object().category.pk])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()

@@ -1,11 +1,30 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.views.generic.list import ListView
 
 from basketapp.models import Basket
 from mainapp.models import Product
+
+
+# class BasketListView(LoginRequiredMixin, ListView):
+#     model = Basket
+#     template_name = 'basketapp/basket.html'
+#     context_object_name = 'basket'
+#     login_url = '/admin/'
+#     login_url = reverse_lazy('products:index')
+#     raise_exception = True
+#
+#     def get_context_data(self, *, object_list=None, **kwargs):
+#         context = super().get_context_data()
+#         context['title'] = 'корзина'
+#         return context
+#
+#     def get_queryset(self):
+#         return Basket.objects.filter(user=self.request.user)
 
 
 @login_required
