@@ -336,7 +336,10 @@ class ProductCreateView(CreateView):
     model = ProductCategory
     form_class = ProductEditForm
     template_name = 'adminapp/product/product_create.html'
-    success_url = reverse_lazy('admin_staff:categories')
+    # success_url = reverse_lazy('admin_staff:categories')
+
+    def get_success_url(self):
+        return reverse('admin_staff:products', args=[self.get_object().category.pk])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
